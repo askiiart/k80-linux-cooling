@@ -2,8 +2,7 @@ import GPUtil
 import time
 
 gpus = GPUtil.getGPUs()
-gpu = gpus[0]
 
 while True:
-    print(str(gpu.temperature) + " C")
+    print(str(max(gpu.temperature for gpu in gpus)) + " C")
     time.sleep(3)
