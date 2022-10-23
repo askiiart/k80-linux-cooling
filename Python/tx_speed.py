@@ -10,7 +10,7 @@ try:
     # On Linux, it will be "/dev/ttyXXX#", like "/dev/ttyACM0" or "/dev/ttyUSB0". I think macOS is the same.
     # On Windows, it will be "COM#", like "COM3"
     # ---
-    port = '/dev/ttyACM0'
+    port = '/dev/ttyACM2'
     link = txfer.SerialTransfer(port, 115200, timeout=.1)
 
     link.open()
