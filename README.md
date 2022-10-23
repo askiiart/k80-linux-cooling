@@ -7,9 +7,8 @@ between your GPUs, then will send that speed to your Arduino.
 
 ### How to use
 1. Connect the Arduino to the fan according to this diagram:
-![https://create.arduino.cc/projecthub/tylerpeppy/25-khz-4-pin-pwm-fan-control-with-arduino-uno-3005a1](Images/arduino-fan-diagram.png)
-   1. #### Connect to the PWM wire, not TACH as is shown there! The color may change depending on your model of fan!
-      1. Sorry for not making another diagram, I couldn't find any decent way to do so. Once I make a new diagram, I'll 
+
+![PWM connected to pin 9, TACH not connected](Images/arduino-fan-diagram.png)
 2. Connect the Arduino to your PC via USB, then find the port it's on and **set the port variable**. 
    1. Instructions for finding the port are in the Python code.
 3. Revel in your success!
@@ -41,4 +40,4 @@ Google a diagram first.
 ### Resources I used
 - Python-Arduino communications library - [pySerialTransfer](https://github.com/PowerBroker2/pySerialTransfer)
 - Arduino PWM fan control - [25 kHz 4 Pin PWM Fan Control with Arduino Uno](https://create.arduino.cc/projecthub/tylerpeppy/25-khz-4-pin-pwm-fan-control-with-arduino-uno-3005a1)
-  - This is where I got the arduino-fan diagram from.
+  - This is the basis of my arduino-fan diagram
