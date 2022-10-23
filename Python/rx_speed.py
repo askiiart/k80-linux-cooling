@@ -24,10 +24,12 @@ try:
         temp = max(gpu.temperature for gpu in gpus)
 
         speed = int(((temp - 40) / 40) * 100)
-        if speed < 40:
-            speed = 40
+        min_speed = 0
+        max_speed = 100
+        if speed < 0:
+            speed = min_speed
         elif speed > 100:
-            speed = 100
+            speed = max_speed
 
         print(f'Temp: {temp}')
         print(f'Speed: {speed}')
