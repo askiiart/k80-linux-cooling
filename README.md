@@ -1,5 +1,7 @@
 # Universal K80 Cooling
 
+This is a universal cooling software, which uses an Arduino Uno, PWM fan, and Python 3. It was designed for use with a Tesla K80, but should work with any NVIDIA GPU.
+
 This will determine the speed your fan (connected to your Arduino) should run at based on the highest temperature 
 between your GPUs, then will send that speed to your Arduino. 
 
@@ -9,12 +11,11 @@ Make sure to set the port in the .py file you use!
 
 ### How to use
 1. Connect the Arduino to the fan according to this diagram:
-
 ![PWM connected to pin 9, TACH not connected](Images/arduino-fan-diagram.png)
-2. Run `tx_speed.py`, and upload `rx_speed.ino` to your Arduino Uno. 
-3. **Set the port variable** 
+2. **Set the port variable** 
    1. Instructions for finding the port are in the Python code.
-4Revel in your success!
+3. Run `tx_speed.py`, and upload `rx_speed.ino` to your Arduino Uno. 
+4. Revel in your success!
    1. If you plan to use this constantly, make sure to create a service that starts the Python code on boot.
 
 ### My setup
