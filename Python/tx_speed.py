@@ -16,9 +16,9 @@ try:
     port = 'ttyACM'
     while not arduino_connected:
         ports = getoutput(f'ls /dev | grep {port}').split('\n')
-        if ports != ['']
+        if ports != ['']:
             ports.sort()
-            port = ports[len(x) - 1]
+            port = ports[len(ports) - 1]
             arduino_connected = True
 
     link = txfer.SerialTransfer(port, 115200, timeout=.1)
