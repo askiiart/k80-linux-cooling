@@ -14,7 +14,7 @@ Make sure to set the port in the .py file you use!
 ![PWM connected to pin 9, TACH not connected](Images/arduino-fan-diagram.png)
 2. **Set the port variable** 
    1. Instructions for finding the port are in the Python code.
-3. Upload `rx_speed.ino` to your Arduino Uno, then run `tx_speed.py`.
+3. Upload `Arduino/rx_speed.ino` to your Arduino Uno, then run `Python/tx_speed.py`.
    1. Make sure not to run the Python file until the Arduino sketch is done uploading! It should only take a few seconds.
 5. Revel in your success!
    1. If you plan to use this constantly, make sure to create a service that starts the Python code on boot.
