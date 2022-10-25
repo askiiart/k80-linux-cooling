@@ -1,3 +1,5 @@
+import os
+
 import GPUtil
 import time
 
@@ -10,7 +12,15 @@ try:
     # On Linux, it will be "/dev/ttyXXX#", like "/dev/ttyACM0" or "/dev/ttyUSB0". I think macOS is the same.
     # On Windows, it will be "COM#", like "COM3"
     # ---
-    port = '/dev/ttyACM2'
+    port = '/dev/ttyACM0'
+
+    arduino_connected = False
+    from subprocess import getoutput
+    while not arduino_connected:
+        ports = getoutput('ls /dev | grep ttyACM').split('\n')
+        ports = sorted(ports)
+
+
     link = txfer.SerialTransfer(port, 115200, timeout=.1)
 
     link.open()
