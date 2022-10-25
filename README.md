@@ -3,15 +3,18 @@
 This will determine the speed your fan (connected to your Arduino) should run at based on the highest temperature 
 between your GPUs, then will send that speed to your Arduino. 
 
+Make sure to set the port in the .py file you use!
+
 ---
 
 ### How to use
 1. Connect the Arduino to the fan according to this diagram:
 
 ![PWM connected to pin 9, TACH not connected](Images/arduino-fan-diagram.png)
-2. **Connect the Arduino to your PC via USB, then find its port and set the port variable** 
+2. Run `tx_speed.py`, and upload `rx_speed.ino` to your Arduino Uno. 
+3. **Set the port variable** 
    1. Instructions for finding the port are in the Python code.
-3. Revel in your success!
+4Revel in your success!
    1. If you plan to use this constantly, make sure to create a service that starts the Python code on boot.
 
 ### My setup
@@ -30,6 +33,7 @@ Pictures will be added later once my setup is complete. Don't expect it to happe
  - You may need to change some variables in the Arduino code depending on your fan's specifications.
    - Try looking up a datasheet
  - This was designed for an Arduino Uno, and should work on one. I don't know about running it on anything else, though.
+ - I'm busy, so a lot of the files are probably still broken. However, the main stuff is working.
 
 ---
 
