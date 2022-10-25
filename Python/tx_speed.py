@@ -26,11 +26,10 @@ try:
     link.open()
     time.sleep(2)
 
-    # GPUtil setup
-    gpus = GPUtil.getGPUs()
 
     while True:
         time.sleep(1)
+        gpus = GPUtil.getGPUs()
         temp = max(gpu.temperature for gpu in gpus)
 
         speed = int(((temp - 40) / 40) * 100)
