@@ -19,6 +19,7 @@ try:
         if ports != ['']
             ports.sort()
             port = ports[len(x) - 1]
+            arduino_connected = True
 
     link = txfer.SerialTransfer(port, 115200, timeout=.1)
 
