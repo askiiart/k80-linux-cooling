@@ -1,7 +1,5 @@
 #include "SerialTransfer.h"
 
-// This program will take an number from the PC and display it using LEDs to represent it as a binary number
-
 SerialTransfer myTransfer;
 
 const byte OC1A_PIN = 9;
@@ -10,13 +8,9 @@ const byte OC1B_PIN = 10;
 const word PWM_FREQ_HZ = 25000; //Adjust this value to adjust the frequency (Frequency in HZ!) (Set currently to 25kHZ)
 const word TCNT1_TOP = 16000000/(2*PWM_FREQ_HZ);
 
-int pin1=8;  //initializing pins as vars because who wants to use constants:
-int pin2=7;
-int pin3=6;
-int pin4=5;
-int pin5=4;
-int pin6=3;
-int pin7=2;
+struct STRUCT {
+  char val;
+} myStruct;
 
 void setup() {
   // Setup Serial transfer with PC
@@ -54,14 +48,11 @@ void loop() {
     }
     myTransfer.sendData(myTransfer.bytesRead);
 
-	int x = int(myTransfer.packet.rxBuff);
-    if((x % 2) > 0) { digitalWrite(pin1, HIGH); } else { digitalWrite(pin1, LOW); }
-    if((x % 4) > 1) { digitalWrite(pin2, HIGH); } else { digitalWrite(pin2, LOW); }
-    if((x % 8) > 3) { digitalWrite(pin3, HIGH); } else { digitalWrite(pin3, LOW); }
-    if((x % 16) > 7) { digitalWrite(pin4, HIGH); } else { digitalWrite(pin4, LOW); }
-    if((x % 32) > 15) { digitalWrite(pin4, HIGH); } else { digitalWrite(pin4, LOW); }
-    if((x % 64) > 31) { digitalWrite(pin4, HIGH); } else { digitalWrite(pin4, LOW); }
-    if((x % 128) > 63) { digitalWrite(pin4, HIGH); } else { digitalWrite(pin4, LOW); }
+    uint16_t recSize = 0;
+    recSize = myTransfer.rxObj(myStruct, recSize);
+    int x = myStruct.val * 2;  // I have no idea why I have to multiply it by 2, but I do
+
+    setPwmDuty(x);
   }
 }
 
