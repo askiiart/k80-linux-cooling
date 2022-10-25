@@ -1,25 +1,24 @@
 import os
-
 import GPUtil
 import time
-
 from pySerialTransfer import pySerialTransfer as txfer
+from subprocess import getoutput
 
 try:
     # ---
     # You will need to customize port to your own computer; to find your port:
     # With your Arduino plugged in, open Arduino IDE, and click "Select Board". Then, you can see the port.
-    # On Linux, it will be "/dev/ttyXXX#", like "/dev/ttyACM0" or "/dev/ttyUSB0". I think macOS is the same.
-    # On Windows, it will be "COM#", like "COM3"
+    # The port of the Uno will be "/dev/ttyXXX#", like "/dev/ttyACM0" or "/dev/ttyUSB0". I think macOS is the same.
+    # Then, just remove "/dev/", and the number, from the port, and type it into the variable `port`
     # ---
-    port = '/dev/ttyACM0'
 
     arduino_connected = False
-    from subprocess import getoutput
+    port = 'ttyACM'
     while not arduino_connected:
-        ports = getoutput('ls /dev | grep ttyACM').split('\n')
-        ports = sorted(ports)
-
+        ports = getoutput(f'ls /dev | grep {port}').split('\n')
+        if ports != ['']
+            ports.sort()
+            port = ports[len(x) - 1]
 
     link = txfer.SerialTransfer(port, 115200, timeout=.1)
 
