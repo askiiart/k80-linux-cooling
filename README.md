@@ -1,6 +1,6 @@
 # Universal K80 Cooling
 
-This is a Linux cooling control software, which uses an Arduino Uno, PWM fan, and Python 3. It was designed for use with a Tesla K80, but should work with any NVIDIA GPU.
+This is a Linux cooling control software, which uses an Arduino Uno, PWM fan, and Python 3. It was designed for use with a Tesla K80 (a datacenter GPU without fans), but should work with any NVIDIA GPU.
 
 This will determine the speed your fan (connected to your Arduino) should run at based on the highest temperature 
 between your GPUs, then will send that speed to your Arduino. 
