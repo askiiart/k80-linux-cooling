@@ -21,6 +21,8 @@ Make sure to set the port in the .py file you use!
 ### My setup
 I use [this](https://www.thingiverse.com/thing:4960323) 3D-printed fan adapter for my Tesla K80; I highly recommend it.
 
+Also, I use [this](https://www.amazon.com/8025-DS08025R12U-0-7A-4Wire-Cooler/dp/B08PYLMGVM) fan. I wouldn't recommend buying it, though. I just use it because it's the most powerful fan I already had. It's also pretty loud.
+
 In the long-term, I'm planning to build my own front cover for my PC case (a Corsair 175R), and will have a spot for my 
 Arduino and wiring in it.
 
