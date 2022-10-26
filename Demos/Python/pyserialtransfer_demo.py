@@ -24,7 +24,7 @@ try:
     time.sleep(2)
     temp = 0
 
-    while True:
+    while temp < 100:
         time.sleep(1)
         ################################################################################################################
         # How to send data to the Arduino
