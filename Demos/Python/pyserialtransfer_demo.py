@@ -1,4 +1,5 @@
 import time
+from subprocess import getoutput
 
 from pySerialTransfer import pySerialTransfer as txfer
 
@@ -9,7 +10,14 @@ try:
     # On Linux, it will be "/dev/ttyXXX#", like "/dev/ttyACM0" or "/dev/ttyUSB0". I think macOS is the same.
     # On Windows, it will be "COM#", like "COM3"
     # ---
-    port = '/dev/ttyACM2'
+    port = 'ttyACM'
+    while True:
+        ports = getoutput(f'ls /dev | grep {port}').split('\n')
+        if ports != ['']:
+            ports.sort()
+            port = ports[len(ports) - 1]
+            break
+
     link = txfer.SerialTransfer(port, 115200, timeout=.1)
 
     link.open()
