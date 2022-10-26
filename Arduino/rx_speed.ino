@@ -50,7 +50,7 @@ void loop() {
 
     uint16_t recSize = 0;
     recSize = myTransfer.rxObj(myStruct, recSize);
-    int x = myStruct.val * 2;
+    int x = myStruct.val;
 
     setPwmDuty(x);
   }

@@ -5,7 +5,7 @@ SerialTransfer myTransfer;
 const byte OC1A_PIN = 9;
 const byte OC1B_PIN = 10;
 
-const word PWM_FREQ_HZ = 25000;  //Adjust this value to adjust the frequency (Frequency in HZ!) (Set currently to 25kHZ)
+const word PWM_FREQ_HZ = 25000; //Adjust this value to adjust the frequency (Frequency in HZ!) (Default is 25kHZ)
 const word TCNT1_TOP = 16000000/(2*PWM_FREQ_HZ);
 
 int pin1=8;
@@ -58,7 +58,7 @@ void loop() {
 
     uint16_t recSize = 0;
     recSize = myTransfer.rxObj(myStruct, recSize);
-    int x = myStruct.val * 2;
+    int x = myStruct.val * 2;  // For some reason the display needs it * 2; I prefer to keep my sanity so I won't question it
 
 		if((x & 2) > 0) { digitalWrite(pin1, HIGH); } else { digitalWrite(pin1, LOW); }
     if((x & 4) > 1) { digitalWrite(pin2, HIGH); } else { digitalWrite(pin2, LOW); }
@@ -68,7 +68,7 @@ void loop() {
     if((x & 64) > 31) { digitalWrite(pin6, HIGH); } else { digitalWrite(pin6, LOW); }
     if((x & 128) > 63) { digitalWrite(pin7, HIGH); } else { digitalWrite(pin7, LOW); }
 
-    setPwmDuty(x);
+    setPwmDuty(x / 2);
   }
 }
 
