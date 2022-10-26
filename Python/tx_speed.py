@@ -12,14 +12,13 @@ try:
     # Then, just remove "/dev/", and the number, from the port, and type it into the variable `port`
     # ---
 
-    arduino_connected = False
     port = 'ttyACM'
-    while not arduino_connected:
+    while True:
         ports = getoutput(f'ls /dev | grep {port}').split('\n')
         if ports != ['']:
             ports.sort()
             port = ports[len(ports) - 1]
-            arduino_connected = True
+            break
 
     link = txfer.SerialTransfer(port, 115200, timeout=.1)
 
