@@ -19,6 +19,8 @@ try:
             ports.sort()
             port = ports[len(ports) - 1]
             break
+        print('Waiting for Arduino...')
+        time.sleep(3)
 
     link = txfer.SerialTransfer(port, 115200, timeout=.1)
 
