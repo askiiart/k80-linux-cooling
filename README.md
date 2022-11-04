@@ -47,3 +47,8 @@ Pictures will be added later once my setup is complete. Don't expect it to happe
 - Arduino PWM fan control - [25 kHz 4 Pin PWM Fan Control with Arduino Uno](https://create.arduino.cc/projecthub/tylerpeppy/25-khz-4-pin-pwm-fan-control-with-arduino-uno-3005a1)
   - This is the basis of my arduino-fan diagram
 - See NVIDIA GPU temperatures - [GPUtil](https://pypi.org/project/GPUtil/)
+
+---
+
+### TODO
+- Add diagram for wiring LED lights
