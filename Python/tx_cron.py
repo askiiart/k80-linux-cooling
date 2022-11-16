@@ -64,13 +64,13 @@ try:
                 error += ': STOP_BYTE_ERROR'
             else:
                 print('Error: {}'.format(link.status))
-    
+
     link.close()
 
 except KeyboardInterrupt:
     try:
         link.close()
-    
+
     except:
         pass
 
@@ -81,6 +81,6 @@ except:
 
     try:
         link.close()
-    
+
     except:
         pass
