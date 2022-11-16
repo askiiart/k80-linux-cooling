@@ -26,7 +26,6 @@ try:
     link.open()
     time.sleep(2)
 
-
     while True:
         time.sleep(1)
         gpus = GPUtil.getGPUs()
@@ -70,7 +69,8 @@ try:
                     print('Error: {}'.format(link.status))
 
         # Parse response from Arduino
-        rec_int = link.rx_obj(obj_type=int, obj_byte_size=int_size, start_pos=(send_size - int_size))
+        rec_int = link.rx_obj(
+            obj_type=int, obj_byte_size=int_size, start_pos=(send_size - int_size))
 
         # Evaluate for comm. errors
         if speed != rec_int:
