@@ -20,9 +20,9 @@ Make sure to set the port in the .py file you use!
    1. If you plan to use this constantly, make sure to create a service that starts the Python code on boot.
 
 ### My setup
-I use [this](https://www.thingiverse.com/thing:4960323) 3D-printed fan adapter for my Tesla K80; I highly recommend it.
-
-Also, I use [this](https://www.amazon.com/8025-DS08025R12U-0-7A-4Wire-Cooler/dp/B08PYLMGVM) fan. I wouldn't recommend buying it, though. I just use it because it's the most powerful fan I already had. It's also pretty loud.
+- I use [this](https://www.thingiverse.com/thing:4960323) 3D-printed fan adapter for my Tesla K80; I highly recommend it.
+  - I also remixed it into a 92mm version [here](https://www.thingiverse.com/thing:5408988)!
+- Also, I use [this](https://www.amazon.com/8025-DS08025R12U-0-7A-4Wire-Cooler/dp/B08PYLMGVM) fan. It's not necessarily a *bad* fan, but it's very loud.
 
 In the long-term, I'm planning to build my own front cover for my PC case (a Corsair 175R), and will have a spot for my 
 Arduino and wiring in it.
@@ -34,10 +34,10 @@ Pictures will be added later once my setup is complete. Don't expect it to happe
 ### Notes and Limitations:
  - This currently **only supports NVIDIA GPUs**
  - This currently **only supports normal PWM**, not delta PWM
- - You may need to change some variables in the Arduino code depending on your fan's specifications.
+ - You *may* need to change some variables in the Arduino code depending on your fan's specifications.
    - Try looking up a datasheet
  - This was designed for an Arduino Uno, and should work on one. I don't know about running it on anything else, though.
- - I'm busy, so a lot of the files are probably still broken. However, the main stuff is working.
+ - `tx_speed.py` works fine, but it's just an infinite loop. I'm working on marking a version that uses a cron job, but it's not done yet.
 
 ---
 
