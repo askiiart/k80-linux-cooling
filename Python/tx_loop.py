@@ -1,4 +1,3 @@
-import os
 import GPUtil
 import time
 from pySerialTransfer import pySerialTransfer as txfer
