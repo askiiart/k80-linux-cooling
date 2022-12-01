@@ -10,14 +10,29 @@ Make sure to set the port in the .py file you use!
 ---
 
 ### How to use
-1. Connect the Arduino to the fan according to this diagram:
+1. Install dependencies using `pip install -r requirements.txt`
+2. Connect the Arduino to the fan according to this diagram:
 ![PWM connected to pin 9, TACH not connected](Images/arduino-fan-diagram.png)
-2. **Set the port variable** 
+3. **Set the port variable** 
    1. Instructions for finding the port are in the Python code.
-3. Upload `Arduino/rx_speed.ino` to your Arduino Uno, then run `Python/tx_speed.py`.
-   1. Make sure not to run the Python file until the Arduino sketch is done uploading! It should only take a few seconds.
-5. Revel in your success!
-   1. If you plan to use this constantly, make sure to create a service that starts the Python code on boot.
+4. Create a script to run this every 10 seconds
+   1. Use a text editor to create a script called `every5secs.sh, and add the code below.
+   2. Make a note of where you saved the script, and remember to change `/path/to/tx_cron.py`
+```bash
+# This runs the tx_cron.py every 10 seconds
+i=0
+
+while [ $i -lt 6 ]; do # 6 ten-second intervals in 1 minute
+  python3 /path/to/tx_cron.py & #run your command
+  sleep 10
+  i=$(( i + 1 ))
+done
+```
+4. Create a cron job
+   1. Run `crontab -e`
+   2. Add this line to the bottom of the file: `* * * * * python3 /path/to/every5secs.sh`
+      1. Remember to change the path to your script!
+   3. Save and exit with `Escape`, `:wq`, `Enter`
 
 ### My setup
 - I use [this](https://www.thingiverse.com/thing:4960323) 3D-printed fan adapter for my Tesla K80; I highly recommend it.
