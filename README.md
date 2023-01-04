@@ -7,8 +7,6 @@ between your GPUs, then will send that speed to your Arduino.
 
 Make sure to set the port in the .py file you use!
 
----
-
 ### How to use
 1. Install dependencies using `pip install -r requirements.txt`
 2. Connect the Arduino to the fan according to this diagram:
@@ -37,14 +35,8 @@ done
 ### My setup
 - I use [this](https://www.thingiverse.com/thing:4960323) 3D-printed fan adapter for my Tesla K80; I highly recommend it.
   - I also remixed it into a 92mm version [here](https://www.thingiverse.com/thing:5408988)!
-- Also, I use [this](https://www.amazon.com/8025-DS08025R12U-0-7A-4Wire-Cooler/dp/B08PYLMGVM) fan. It's not necessarily a *bad* fan, but it's very loud.
-
-In the long-term, I'm planning to build my own front cover for my PC case (a Corsair 175R), and will have a spot for my 
-Arduino and wiring in it.
-
-Pictures will be added later once my setup is complete. Don't expect it to happen anytime soon, though.
-
----
+- Also, I use [this](https://www.amazon.com/Wathai-Airflow-Speed-Pressure-Cooling/dp/B07Z4JZPKN) fan. It's pretty powerful, and pretty loud!
+  - Note: I couldn't get PWM to work properly with this fan. Maybe get a Delta one if you want that.
 
 ### Notes and Limitations:
  - This currently **only supports NVIDIA GPUs**
@@ -54,16 +46,12 @@ Pictures will be added later once my setup is complete. Don't expect it to happe
  - This was designed for an Arduino Uno, and should work on one. I don't know about running it on anything else, though.
  - `tx_speed.py` works fine, but it's just an infinite loop. I'm working on marking a version that uses a cron job, but it's not done yet.
 
----
-
 ### Resources I used
 - Python-Arduino communications library - [pySerialTransfer](https://github.com/PowerBroker2/pySerialTransfer)
   - Thanks for the help figuring this out, [PowerBroker2](https://github.com/PowerBroker2)!
 - Arduino PWM fan control - [25 kHz 4 Pin PWM Fan Control with Arduino Uno](https://create.arduino.cc/projecthub/tylerpeppy/25-khz-4-pin-pwm-fan-control-with-arduino-uno-3005a1)
   - This is the basis of my arduino-fan diagram
 - See NVIDIA GPU temperatures - [GPUtil](https://pypi.org/project/GPUtil/)
-
----
 
 ### TODO
 - Add diagram for wiring LED lights
