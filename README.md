@@ -9,7 +9,7 @@ Make sure to set the port in the .py file you use!
 
 ### How to use
 1. Install dependencies using `pip install -r requirements.txt`
-2. Connect the Arduino to the fan according to this diagram:
+2. Connect the Arduino to the fan according to this diagram. Keep in mind that if you're powering the fan through the arduino, as is the case here, the fan can only be up to 1 amp.
 ![PWM connected to pin 9, TACH not connected](Images/arduino-fan-diagram.png)
 3. **Set the port variable** 
    1. Instructions for finding the port are in the Python code.
